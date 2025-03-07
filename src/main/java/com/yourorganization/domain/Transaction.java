@@ -42,7 +42,6 @@ public class Transaction {
         this.type = type;
     }
 
-
     /**
      * Перечисление типов транзакции: доход или расход.
      */

@@ -1,11 +1,15 @@
 package com.yourorganization.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Класс, описывающий финансовую цель (накопление на что-либо).
  */
+@Getter
+@Setter
 public class Goal {
     private static long idCounter = 1L;
-
     private final long id;
     private final long userId;
     private String title;
@@ -25,78 +29,6 @@ public class Goal {
         this.title = title;
         this.targetAmount = targetAmount;
         this.currentAmount = 0.0;
-    }
-
-    /**
-     * Возвращает идентификатор цели.
-     *
-     * @return уникальный идентификатор
-     */
-    public long getId() {
-        return id;
-    }
-
-    /**
-     * Возвращает идентификатор пользователя, которому принадлежит цель.
-     *
-     * @return идентификатор пользователя
-     */
-    public long getUserId() {
-        return userId;
-    }
-
-    /**
-     * Возвращает название цели.
-     *
-     * @return название
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     * Устанавливает новое название цели.
-     *
-     * @param title новое название
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
-     * Возвращает целевую сумму.
-     *
-     * @return целевая сумма
-     */
-    public double getTargetAmount() {
-        return targetAmount;
-    }
-
-    /**
-     * Устанавливает новую целевую сумму.
-     *
-     * @param targetAmount новая сумма
-     */
-    public void setTargetAmount(double targetAmount) {
-        this.targetAmount = targetAmount;
-    }
-
-    /**
-     * Возвращает текущую накопленную сумму.
-     *
-     * @return накоплено на данный момент
-     */
-    public double getCurrentAmount() {
-        return currentAmount;
-    }
-
-    /**
-     * Устанавливает текущую накопленную сумму (прямое присвоение).
-     *
-     * @param currentAmount новая сумма
-     */
-    public void setCurrentAmount(double currentAmount) {
-        this.currentAmount = currentAmount;
     }
 
     /**

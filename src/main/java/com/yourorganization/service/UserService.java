@@ -67,12 +67,10 @@ public class UserService {
         if (user == null) {
             throw new IllegalArgumentException("Пользователь не найден");
         }
-
         User existing = db.findUserByEmail(newEmail);
         if (existing != null && existing.getId() != userId) {
             throw new IllegalArgumentException("Этот email уже занят другим пользователем!");
         }
-
         user.setEmail(newEmail);
         user.setPassword(newPassword);
         user.setName(newName);
